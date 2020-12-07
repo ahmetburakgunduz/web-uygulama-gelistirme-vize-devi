@@ -1,0 +1,57 @@
+﻿@model webders1.Models.ArabaVeri
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Veri Silme Ekranı</h2>
+
+<h3>Bu veriyi silmek istediğnizden emin misiniz ?</h3>
+<div>
+    <h4>Arabaya Ağit Veriler</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Marka)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Marka)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Yil)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Yil)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MotorGucu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MotorGucu)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <h5>BU İŞLEMİN GERİ DÖNÜŞÜ OLMAYACAKTIR!!!</h5>
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

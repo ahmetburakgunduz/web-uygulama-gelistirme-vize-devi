@@ -1,0 +1,51 @@
+﻿@model IEnumerable<webders1.Models.ArabaVeri>
+@{
+    ViewBag.Title = "Listele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<h2>Araba Listesi</h2>
+
+<p>
+    @Html.ActionLink("Crate Now","Yeni")
+</p>
+<table class=" table-bordered">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Marka)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Model)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.Yil)
+        </th>
+        <th>
+            @Html.DisplayNameFor(Model => Model.MotorGucu)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(ModelItem => item.Marka)
+    </td>
+    <td>
+        @Html.DisplayFor(ModelItem => item.Model)
+    </td>
+    <td>
+        @Html.DisplayFor(ModelItem => item.Yil)
+    </td>
+    <td>
+        @Html.DisplayFor(ModelItem => item.MotorGucu)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { Id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { Id = item.Id })
+    </td>
+</tr>
+    }
+</table>
